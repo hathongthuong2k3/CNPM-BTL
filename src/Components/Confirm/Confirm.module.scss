@@ -1,0 +1,116 @@
+.wrapper {
+  background-color: #d9d9d9;
+  display: flex;
+  justify-content: center;
+}
+
+p {
+  display: inline-block;
+}
+.nhan_yeu_cau {
+  text-align: center;
+}
+.nhan_yeu_cau > p {
+  text-align: center;
+  font-size: 25px;
+  padding: 34.5px 64px;
+  font-weight: 700;
+  color: #125380;
+  margin: 41px 0 0 0;
+}
+.box_ma_xn {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  background-color: rgba(217, 217, 217, 0.5);
+  border-radius: 10px;
+  text-align: center;
+  width: 900px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.minibox {
+  margin: 18px 40px 42px 40px;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0);
+}
+.ma {
+  /* display: block; */
+  font-size: 15px !important;
+  font-weight: 400;
+  line-height: 17.57px;
+  padding: 13px 36px;
+  background-color: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.ma_xn {
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 58.55px;
+  padding: 27.5px 0px;
+  margin: 0;
+  text-align: center;
+}
+.trangxacnhan {
+  background-color: white;
+  text-align: center;
+  width: 1180px;
+  height: 824px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.b1_xam {
+  text-align: left !important;
+  padding: 14px 0px 15px 0px;
+  background-color: #d9d9d9;
+  height: 140px;
+}
+.b2_trang {
+  border: 1px solid black;
+  width: 100%;
+  height: auto;
+  background-color: white;
+}
+.b3 p {
+  width: 100%;
+  height: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.tren {
+  margin-top: 16px;
+}
+
+.duoi {
+  height: 100%;
+}
+.b3 {
+  margin: 10px 0px 10px 20px;
+}
+.back {
+  font-size: 15px !important;
+  font-weight: 400;
+  line-height: 17.57px;
+  width: 190px;
+  height: 60px;
+  margin-top: 58px;
+  color: white;
+  background-color: #1b80c4;
+  border: 1px solid #1b80c4;
+  margin-left: 56px;
+  margin-right: 56px;
+}
+.bt_trang {
+  border: 1px solid #1b80c4;
+  background-color: white !important;
+  color: #1b80c4;
+}
+.back:hover {
+  cursor: pointer;
+}
+.bt-link {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: white;
+}

@@ -1,0 +1,82 @@
+.wrapper {
+  background-color: #d9d9d9;
+  display: flex;
+  justify-content: center;
+}
+p {
+  display: inline-block;
+}
+.nhan_yeu_cau {
+  text-align: center;
+}
+.nhan_yeu_cau > p {
+  text-align: center;
+  font-size: 25px;
+  width: 100%;
+  height: 100%;
+  padding: 34.5px 64px;
+  font-weight: 700;
+  color: #125380;
+  margin: 41px 0 0 0;
+}
+.box_ma_xn {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  background-color: rgba(217, 217, 217, 0.5);
+  border-radius: 10px;
+  text-align: center;
+  width: 600px;
+  height: 422px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.ma {
+  display: block;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 17.57px;
+  padding: 27.5px 0px;
+  margin: 73px auto 0 auto;
+  text-align: center;
+}
+.ma_xn {
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 58.55px;
+  padding: 27.5px 0px;
+  margin: 0;
+  text-align: center;
+}
+.trangxacnhan {
+  background-color: white;
+  text-align: center;
+  width: 1180px;
+  height: 824px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.back {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 17.57px;
+  width: 187px;
+  height: 60px;
+  margin-top: 58px;
+  color: white;
+  background-color: #1b80c4;
+  border: 1px solid #1b80c4;
+  text-decoration: none;
+}
+.back:hover {
+  cursor: pointer;
+}
+.bt-link {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: white;
+}
+.bt-link:active {
+  text-decoration: none;
+  color: white;
+}

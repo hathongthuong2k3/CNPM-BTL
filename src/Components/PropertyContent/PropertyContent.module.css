@@ -1,0 +1,116 @@
+.wrapper {
+    background-color: #d9d9d9;
+
+    justify-content: center;
+}
+.chooseSize {
+    margin: 0;
+    top: 41px;
+    left: 399px;
+    font-size: inherit;
+    font-weight: 700;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 382px;
+    height: 94px;
+}
+.chooseSize,
+.cancel,
+.uploadArea {
+    position: absolute;
+}
+.uploadArea {
+  top: 147px;
+  left: 139px;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-gainsboro-300);
+  border: 1px solid var(--color-gray-100);
+  box-sizing: border-box;
+  width: 902px;
+  height: 424px;
+  overflow: hidden;
+}
+.cancel {
+  top: 0;
+  left: 3px;
+  font-size: var(--font-size-mini);
+  font-family: var(--font-roboto-serif);
+  color: var(--color-steelblue-100);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 187px;
+  height: 60px;
+}
+.cancelButton {
+  cursor: pointer;
+  border: 1px solid var(--color-steelblue-100);
+  padding: 0;
+  background-color: var(--color-white);
+  top: 615px;
+  left: 341px;
+  box-sizing: border-box;
+  width: 190px;
+}
+.cancelButton:hover {
+  background-color: var(--color-gainsboro-100);
+}
+.cancelButton:active {
+  background-color: var(--color-gainsboro-200);
+  border: 1px solid var(--color-darkslategray-100);
+  box-sizing: border-box;
+}
+.cancelButton,
+.confirmButton,
+.confirm {
+    position: absolute;
+    height: 60px;
+}
+.confirm {
+    top: 0;
+    left: 3px;
+    font-size: var(--font-size-mini);
+    font-family: var(--font-roboto-serif);
+    color: var(--color-white);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 187px;
+}
+.confirmButton {
+  cursor: pointer;
+  border: 1px solid var(--color-steelblue-100);
+  padding: 0;
+  background-color: var(--color-steelblue-100);
+  top: 615px;
+  left: 643px;
+  box-sizing: border-box;
+  width: 190px;
+}
+.confirmButton:hover {
+  background-color: var(--color-steelblue-300);
+}
+.confirmButton:active {
+  border: 1px solid var(--color-darkslategray-200);
+  box-sizing: border-box;
+}
+.content {
+    top: 50px;
+    left: 130px;
+    background-color: var(--color-white);
+    width: 100%;
+    height: 712px;
+    overflow: hidden;
+    text-align: center;
+    font-size: var(--font-size-6xl);
+    color: var(--color-steelblue-200);
+    font-family: var(--font-roboto-serif);
+    z-index:1;
+}
+.content:hover {
+  animation-name: 1;
+}

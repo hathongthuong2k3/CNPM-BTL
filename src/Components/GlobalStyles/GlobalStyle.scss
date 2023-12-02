@@ -1,0 +1,61 @@
+@import "normalize.css";
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Average:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100;0,8..144,200;0,8..144,300;0,8..144,400;0,8..144,500;0,8..144,600;0,8..144,700;0,8..144,800;1,8..144,100;1,8..144,200;1,8..144,300;1,8..144,400;1,8..144,500;1,8..144,600;1,8..144,700;1,8..144,800&display=swap");
+//Đặt biến ở đây
+:root {
+    /* fonts */
+    --font-average: Average;
+    --font-roboto-serif: "Roboto Serif";
+    /* font sizes */
+    --font-size-6xl: 25px;
+    --font-size-mini: 15px;
+    /* Colors */
+    --color-gainsboro-100: #d9d9d9;
+    --color-gainsboro-200: #d8d8d8;
+    --color-gainsboro-300: rgba(217, 217, 217, 0.5);
+    --color-steelblue-100: #1b80c4;
+    --color-steelblue-200: #125380;
+    --color-steelblue-300: #14527b;
+    --color-steelblue-400: rgba(27, 128, 196, 0.8);
+    --color-white: #fff;
+    --color-black: #000;
+    --color-gray-100: rgba(0, 0, 0, 0.4);
+    --color-gray-200: rgba(0, 0, 0, 0.1);
+    --color-darkslategray-100: #0d4061;
+    --color-darkslategray-200: #0b314a;
+    --color-aliceblue: #e3eff9;
+    /* Gaps */
+    --gap-503xl: 522px;
+    --gap-491xl: 510px;
+    --gap-536xl: 555px;
+    /* Paddings */
+    --padding-4xs: 9px;
+    --padding-base: 16px;
+    /* Border radiuses */
+    --br-8xs: 5px;
+    --br-3xs: 10px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Playfair Display", serif;
+  font-family: "Roboto Serif", serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+}
+button,
+input,
+[tabindex] {
+  outline: none;
+  border: none;
+}
