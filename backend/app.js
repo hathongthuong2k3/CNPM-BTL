@@ -8,7 +8,7 @@ app.use("/files", express.static("files"));
 //mongodb connection----------------------------------------------
 
 mongoose
-  .connect("mongodb://localhost:27017/uploadfile", {
+  .connect("mongodb+srv://root:123@cnpm.hvtewz8.mongodb.net/CNPM?retryWrites=true&w=majority", {
     useNewUrlParser: true,
   })
   .then(() => {
