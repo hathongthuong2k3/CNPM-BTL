@@ -31,7 +31,7 @@ function PropertyPage () {
   const handleSaveData = async () => {
     // Gửi yêu cầu POST lên server
     try {
-      const response = await axios.post("http://localhost:5001/saveFormData", {
+      const response = await axios.post("http://localhost:3000/saveFormData", {
         selectedNumPage,
         selectedNumofPage,
         selectedPage,

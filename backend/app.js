@@ -95,6 +95,6 @@ app.get("/", async (req, res) => {
   res.send("Success!!!!!!");
 });
 
-app.listen(5001, () => {
+app.listen(3000, () => {
   console.log("Server Started");
 });
