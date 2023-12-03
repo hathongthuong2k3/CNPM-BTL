@@ -1,19 +1,25 @@
 ﻿import PropertyContent from "../PropertyContent";
 import Footer from "../Footer";
 import Header from "../Header";
+import classNames from "classnames/bind";
 import styles from "./PropertyPage.module.css";
+const cx = classNames.bind(styles);
 function PropertyPage() {
     return (
-        <div className={styles.wrapper}>
-            <Header
-                className={styles.Header}
-                currentPage={"In tài liệu"}
-                username={"Thai Bao Long"}
-            />
-            <PropertyContent className={styles.content} />
-            <Footer className={styles.footer} />
-        </div>
+        <div className={cx("wrapper")}>
+        <Header
+          className={cx("header")}
+          currentPage={"In tài liệu"}
+          username={"Thai Bao Long"}
+        />
+        <PropertyContent className={cx("propertycontent")} />
+        <Footer className={cx("footer")} />
+      </div>
     );
 }
 
 export default PropertyPage;
+
+
+
+

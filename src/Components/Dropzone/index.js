@@ -41,7 +41,7 @@ const Dropzone = () => {
     console.log(result);
     if (result.data.status == "ok") {
       navigate("/property");
-      alert("Uploaded Successfully!!!");
+      alert("Tải lên thành công");
       getPdf();
     }
   };
