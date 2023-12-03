@@ -1,5 +1,5 @@
 //Route đưa người dùng tới các trang khi chưa đăng nhập
-import ConfirmPage from "~/Components/CofirmPage";
+import ConfirmPage from "~/Components/ConfirmPage";
 import Home from "~/Components/Home";
 import Login from "~/Components/Login";
 import Print from "~/Components/Print";

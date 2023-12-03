@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useNavigate} from "react-router-dom";
-import { useState} from "react";
+import { useState, useEffect} from "react";
 import styles from "./PropertyContent.module.scss";
 import classNames from "classnames/bind";
 import { get } from "mongoose";
@@ -8,7 +8,7 @@ const cx = classNames.bind(styles);
 function PropertyPage () {
     const navigate = useNavigate();
     const [selectedNumPage, setSelectedNumPage] = useState('');
-  const [selectedNumofPage, setSelectedNumofPage] = useState('');
+  const [selectedPrinter, setSelectPrinter] = useState('');
   const [selectedPage, setSelectedPage] = useState('');
   const [selectedPageSize, setSelectedPageSize] = useState('');
 
@@ -20,27 +20,25 @@ function PropertyPage () {
     setSelectedPage(event.target.value);
   };
 
-  const handleNumofPageChange = (event) => {
-    setSelectedNumofPage(event.target.value);
+  const handleSelectPrinter = (event) => {
+    setSelectPrinter(event.target.value);
   };
 
   const handleSelectPageSizeChange = (event) => {
     setSelectedPageSize(event.target.value);
   };
-
   const handleSaveData = async () => {
     // Gửi yêu cầu POST lên server
+
     try {
       const response = await axios.post("http://localhost:3000/saveFormData", {
         selectedNumPage,
-        selectedNumofPage,
+        selectedPrinter,
         selectedPage,
         selectedPageSize,
       });
-
       console.log(response.data);
-      console.log("Chọn thành công")
-        navigate("/confirmPrint");
+      navigate("/confirmPrint")
     } catch (error) {
       console.error('Error sending data to server:', error);
     }
@@ -53,7 +51,7 @@ function PropertyPage () {
               <div className={cx("uploadarea")}>
                    <select className={styles.chooseNumPage} required={true} id="4" value={selectedNumPage}
         onChange={handleSelectNumPageChange}>
-                        <option value="1">Chọn sô trang trên 1 mặt</option>
+                        <option value="0">Chọn sô trang trên 1 mặt</option>
                         <option value="1">1</option>
                         <option value="4">4</option>
                    </select>
@@ -63,8 +61,18 @@ function PropertyPage () {
                         <option value="1">1</option>
                         <option value="2">2</option>
                    </select>
-                   <input className={styles.chooseNumofPage} placeholder="Chọn trang in" type="text" value={selectedNumofPage}
-        onChange={handleNumofPageChange}/>
+                   <select className={styles.choosePrinter} value={selectedPrinter}
+        onChange={handleSelectPrinter}>
+                        <option value="Chọn máy in">Chọn máy in</option>
+                        <option value="H1-Tầng 1">H1-Tầng 1</option>
+                        <option value="H1-Tầng 2">H1-Tầng 2</option>
+                        <option value="H2-Tầng 1">H2-Tầng 1</option>
+                        <option value="H2-Tầng 2">H2-Tầng 2</option>
+                        <option value="H3-Tâng 1">H3-Tầng 1</option>
+                        <option value="H3-Tầng 2">H3-Tầng 2</option>
+                        <option value="H6-Tầng 1">H6-Tầng 1</option>
+                        <option value="H6-Tầng 2">H6-Tầng 2</option>
+                   </select>
                    <select className={styles.choosePageSize} value={selectedPageSize}
         onChange={handleSelectPageSizeChange}>
                         <option value="Chọn khổ giấy in">Chọn khổ giấy in</option>

@@ -3,80 +3,128 @@
   display: flex;
   justify-content: center;
 }
-p {
-  display: inline-block;
-}
-.nhan_yeu_cau {
-  text-align: center;
-}
-.nhan_yeu_cau > p {
-  text-align: center;
-  font-size: 25px;
-  width: 100%;
-  height: 100%;
-  padding: 34.5px 64px;
-  font-weight: 700;
-  color: #125380;
-  margin: 41px 0 0 0;
-}
-.box_ma_xn {
-  border: 1px solid rgba(0, 0, 0, 0.4);
-  background-color: rgba(217, 217, 217, 0.5);
-  border-radius: 10px;
-  text-align: center;
-  width: 600px;
-  height: 422px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.ma {
-  display: block;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 17.57px;
-  padding: 27.5px 0px;
-  margin: 73px auto 0 auto;
-  text-align: center;
-}
-.ma_xn {
-  font-size: 50px;
-  font-weight: 400;
-  line-height: 58.55px;
-  padding: 27.5px 0px;
-  margin: 0;
-  text-align: center;
-}
-.trangxacnhan {
-  background-color: white;
-  text-align: center;
+
+.main-content {
+  background-color: #ffffff;
   width: 1180px;
   height: 824px;
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.back {
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 17.57px;
-  width: 187px;
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: white, #f7f7f7;
+}
+//   h1, h2, h3, h4, h5, h6, p{
+//     letter-spacing: 1px;
+//     text-align: center;
+//   }
+
+/* FILE UPLOAD */
+
+.code {
+  width: 600px;
+  height: 422px;
+  background-color: #D9D9D9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  border: 1px dashed rgb(117, 112, 112);
+  border-radius: 10px;
+  margin-top: 0px;
+}
+.code h2 {
+  font-size: 50px;
+  font-weight: lighter;
+}
+.code p {
+  font-size: 50px;
+  text-align: center;
+}
+.uploads {
+  margin-top: 100px;
+}
+
+.confirm button {
+  font-size: 20px;
+  width: 322px;
+  height: 45px;
+  padding: 1rem;
+  margin: 1rem;
+  color: #ffffff;
+  font-size: medium;
+  border-radius: 10px;
+  border: 1px solid #1B80C4;
+  background-color: #1B80C4;
+}
+.introduce {
+  color: #125380;
+  width: 778px;
+height: 63px;
+text-align: center;
+font-weight: 300;
+font-size: 25px;
+line-height: 29px;
+margin-bottom: 0px;
+margin-top: 100px;
+}
+.icon {
+  width: 150px;
+  height: 120px;
+  margin-top: -30px;
+  margin-bottom: 30px;
+  color: #777676;
+}
+.confirm h1 {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+.confirm h3 {
+  margin-right: 600px;
+  margin-bottom: 15px;
+  font-size: 20px;
+  opacity: 50%;
+}
+ .display {
+  width: 800px;
+  height: 120px;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:flex-start; 
+  border: 1px solid #000000;
+  margin-top: 0px;
+ }
+
+ .display dl{
+  margin-left: 20px;
+ }
+ .actions button {
+  width: 300px;
   height: 60px;
-  margin-top: 58px;
-  color: white;
-  background-color: #1b80c4;
-  border: 1px solid #1b80c4;
-  text-decoration: none;
-}
-.back:hover {
-  cursor: pointer;
-}
-.bt-link {
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
-  color: white;
-}
-.bt-link:active {
-  text-decoration: none;
-  color: white;
-}
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 40px;
+  font-size: 15px;
+ }
+ .cancel {
+  background-color: #ffffff;
+  border: 1px solid #1B80C4;
+ }
+ .Upload {
+  color: #ffffff;
+  border: 1px solid #1B80C4;
+  background-color: #1B80C4;
+ }
+
+
