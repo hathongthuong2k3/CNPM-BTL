@@ -111,11 +111,34 @@ app.post('/save-code', async (req, res) => {
     res.status(500).json({ status: 'error', message: 'Internal server error' });
   }
 });
+
+const userSchema = new mongoose.Schema({
+  username: String,
+  password: String,
+});
+
+const User = mongoose.model('User', userSchema);
+
+app.post('/login', async (req, res) => {
+  const { username, password } = req.body;
+
+  try {
+    const user = await User.findOne({ username, password });
+
+    if (user) {
+      res.json({ success: true, username: user.username });
+    } else {
+      res.json({ success: false, message: 'Invalid credentials' });
+    }
+  } catch (error) {
+    res.status(500).json({ success: false, message: 'Server error' });
+  }
+});
 //apis----------------------------------------------------------------
 app.get("/", async (req, res) => {
   res.send("Success!!!!!!");
 });
 
-app.listen(3000, () => {
+app.listen(3001, () => {
   console.log("Server Started");
 });

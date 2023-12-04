@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import classNames from "classnames/bind";
 import styles from "./Form.module.scss";
 import { useRef, useState } from "react";
+import axios from "axios";
 const cx = classNames.bind(styles);
 
 function Form() {
@@ -8,13 +10,31 @@ function Form() {
   const [password, setPassWord] = useState("");
   const [focusUserName, setFocusUserName] = useState(false);
   const [focusPassword, setFocusPassWord] = useState(false);
-
+  const navigate = useNavigate();
   const usernameRef = useRef();
   const userpassRef = useRef();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = new FormData(e.target);
+  
+    try {
+      const response = await axios.post('http://localhost:3001/login', {
+        username,
+        password,
+      });
+  
+      const { success, username: loggedInUsername } = response.data;
+  
+      if (success) {
+        // Redirect to the next page or update the state to show the user is logged in
+        navigate("/print");
+        console.log('Logged in successfully');
+      } else {
+        console.error('Invalid credentials');
+      }
+    } catch (error) {
+      console.error('Error during login:', error.message);
+    }
   };
   const handleChangeUserName = (e) => {
     console.log(e.target.value);
@@ -67,7 +87,7 @@ function Form() {
               Vui lòng nhập trường này
             </span>
           </div>
-          <button className={cx("submit")}>ĐĂNG NHẬP</button>
+          <button className={cx("submit")} onClick = {handleSubmit}>ĐĂNG NHẬP</button>
         </form>
         <div className={cx("more-option")}>
           <a href="#" className={cx("forgotpass")}>

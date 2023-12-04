@@ -10,7 +10,7 @@ function Confirm () {
     const [formData, setFormData] = useState([]);
     useEffect(() => {
       // Gửi yêu cầu GET đến API để lấy dữ liệu từ cơ sở dữ liệu
-      axios.get('http://localhost:3000/getFormData')
+      axios.get('http://localhost:3001/getFormData')
         .then((response) => {
           if (response.data.status === 'ok') {
             setFormData(response.data.data);

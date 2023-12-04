@@ -22,7 +22,7 @@ function Sendcode() {
     };
       const saveCodeToDatabase = async (code) => {
         try {
-          await axios.post('http://localhost:3000/save-code', { code });
+          await axios.post('http://localhost:3001/save-code', { code });
         } catch (error) {
           console.error('Error saving code to database:', error);
         }
