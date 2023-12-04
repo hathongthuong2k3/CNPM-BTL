@@ -13,21 +13,26 @@ function Form() {
   const navigate = useNavigate();
   const usernameRef = useRef();
   const userpassRef = useRef();
-
+  const [isLogin, setIsLogin] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     try {
-      const response = await axios.post('http://localhost:3001/login', {
+      const response = await axios.post('http://localhost:3000/login', {
         username,
         password,
       });
-  
+
       const { success, username: loggedInUsername } = response.data;
-  
+
       if (success) {
+        // Update authentication status and username in local storage
+        localStorage.setItem('username', loggedInUsername);
+        setIsLogin(true);
+        setUserName(loggedInUsername);
+
         // Redirect to the next page or update the state to show the user is logged in
-        navigate("/print");
+        navigate("/");
         console.log('Logged in successfully');
       } else {
         console.error('Invalid credentials');

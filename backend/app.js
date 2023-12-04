@@ -6,6 +6,7 @@ const cors = require("cors");
 app.use(cors());
 app.use("/files", express.static("files"));
 const { v4: uuidv4 } = require('uuid');
+const jwt = require('jsonwebtoken');
 //mongodb connection----------------------------------------------
 
 mongoose
@@ -134,11 +135,24 @@ app.post('/login', async (req, res) => {
     res.status(500).json({ success: false, message: 'Server error' });
   }
 });
+app.get('/userdata', async (req, res) => {
+  try {
+    // Check if the user is authenticated
+    if (req.session.user) {
+      res.json({ success: true, userData: req.session.user });
+    } else {
+      res.json({ success: false, message: 'User not found' });
+    }
+  } catch (error) {
+    console.error('Error fetching user data:', error);
+    res.status(500).json({ success: false, message: 'Internal server error' });
+  }
+});
 //apis----------------------------------------------------------------
 app.get("/", async (req, res) => {
   res.send("Success!!!!!!");
 });
 
-app.listen(3001, () => {
+app.listen(3000, () => {
   console.log("Server Started");
 });

@@ -31,7 +31,7 @@ function PropertyPage () {
     // Gửi yêu cầu POST lên server
 
     try {
-      const response = await axios.post("http://localhost:3001/saveFormData", {
+      const response = await axios.post("http://localhost:3000/saveFormData", {
         selectedNumPage,
         selectedPrinter,
         selectedPage,

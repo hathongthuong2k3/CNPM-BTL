@@ -2,12 +2,33 @@ import styles from "./Header.module.scss";
 import classNames from "classnames/bind";
 import Popper from "../Popper";
 import SPSSLogo from "~/Components/images/SPSS-logo.svg";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
 const cx = classNames.bind(styles);
-const isLogin = false;
-function Header({ currentPage, username }) {
+
+function Header({ currentPage }) {
+  const [isLogin, setIsLogin] = useState(false);
+  const [username, setUsername] = useState('');
+  const navigate = useNavigate();
+  useEffect(() => {
+    // Check user's authentication status on component mount
+    const storedUsername = localStorage.getItem('username');
+    if (storedUsername) {
+      setIsLogin(true);
+      setUsername(storedUsername);
+    }
+  }, []);
+
+  const handleLogout = () => {
+    // Clear authentication status and username from local storage on logout
+    localStorage.removeItem('username');
+    setIsLogin(false);
+    setUsername('');
+    navigate("/");
+  };
   return (
     <div className={cx("wrapper")}>
       <div className={cx("page-info")}>
@@ -20,7 +41,12 @@ function Header({ currentPage, username }) {
       <div className={cx("user-info")}>
         <div className={cx("pop-up")}>
           {isLogin ? (
-            <Popper username={username} />
+            <>
+              <span>Hello, {username}</span>
+              <button className={cx("logout")} onClick={handleLogout}>
+                Đăng xuất
+              </button>
+            </>
           ) : (
             <Link className={cx("login")} to={"/login"}>
               Đăng nhập
@@ -35,4 +61,5 @@ function Header({ currentPage, username }) {
     </div>
   );
 }
+
 export default Header;

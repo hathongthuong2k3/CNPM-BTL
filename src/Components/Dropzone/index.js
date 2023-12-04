@@ -17,7 +17,7 @@ const Dropzone = () => {
     getPdf();
   }, []);
   const getPdf = async () => {
-    const result = await axios.get("http://localhost:3001/get-files");
+    const result = await axios.get("http://localhost:3000/get-files");
     console.log(result.data.data);
     setAllImage(result.data.data);
   };
@@ -32,7 +32,7 @@ const Dropzone = () => {
     console.log(title, file);
 
     const result = await axios.post(
-      "http://localhost:3001/upload-files",
+      "http://localhost:3000/upload-files",
       formData,
       {
         headers: { "Content-Type": "multipart/form-data" },
