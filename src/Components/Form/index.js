@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import classNames from "classnames/bind";
 import styles from "./Form.module.scss";
 import { useRef, useState } from "react";
+import * as generate from "../../helpers/generate";
 import axios from "axios";
 const cx = classNames.bind(styles);
 
@@ -14,31 +15,41 @@ function Form() {
   const usernameRef = useRef();
   const userpassRef = useRef();
   const [isLogin, setIsLogin] = useState(false);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
-      const response = await axios.post('http://localhost:3000/login', {
-        username,
-        password,
-      });
+      const response = await axios.post(
+        "http://localhost:3001/login",
+        {
+          username,
+          password,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        }
+      );
 
       const { success, username: loggedInUsername } = response.data;
 
       if (success) {
         // Update authentication status and username in local storage
-        localStorage.setItem('username', loggedInUsername);
+        localStorage.setItem("username", loggedInUsername);
         setIsLogin(true);
         setUserName(loggedInUsername);
 
         // Redirect to the next page or update the state to show the user is logged in
         navigate("/");
-        console.log('Logged in successfully');
+        console.log("Logged in successfully");
+        console.log(response);
       } else {
-        console.error('Invalid credentials');
+        console.error("Invalid credentials");
       }
     } catch (error) {
-      console.error('Error during login:', error.message);
+      console.error("Error during login:", error.message);
     }
   };
   const handleChangeUserName = (e) => {
@@ -92,7 +103,9 @@ function Form() {
               Vui lòng nhập trường này
             </span>
           </div>
-          <button className={cx("submit")} onClick = {handleSubmit}>ĐĂNG NHẬP</button>
+          <button className={cx("submit")} onClick={handleSubmit}>
+            ĐĂNG NHẬP
+          </button>
         </form>
         <div className={cx("more-option")}>
           <a href="#" className={cx("forgotpass")}>
