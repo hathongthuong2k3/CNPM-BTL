@@ -5,6 +5,7 @@ import Login from "~/Components/Login";
 import Print from "~/Components/Print";
 import SendcodePage from "~/Components/SendcodePage";
 import PropertyPage from "~/Components/PropertyPage";
+import Buy from "~/Components/Buy";
 export const publicRoutes = [
   { path: "/", component: Home },
   {
@@ -26,6 +27,10 @@ export const publicRoutes = [
   {
     path: "/property",
     component: PropertyPage,
+  },
+  {
+    path: "/buy",
+    component: Buy,
   },
 ];
 

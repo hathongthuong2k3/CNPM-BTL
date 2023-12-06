@@ -3,31 +3,38 @@ import classNames from "classnames/bind";
 import Popper from "../Popper";
 import SPSSLogo from "~/Components/images/SPSS-logo.svg";
 import { Link, Navigate, useNavigate } from "react-router-dom";
-import axios from 'axios';
-import { useState, useEffect } from 'react';
+import axios from "axios";
+import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
 const cx = classNames.bind(styles);
 
 function Header({ currentPage }) {
   const [isLogin, setIsLogin] = useState(false);
-  const [username, setUsername] = useState('');
+  const [username, setUsername] = useState("");
   const navigate = useNavigate();
   useEffect(() => {
     // Check user's authentication status on component mount
-    const storedUsername = localStorage.getItem('username');
+    const storedUsername = localStorage.getItem("username");
     if (storedUsername) {
       setIsLogin(true);
       setUsername(storedUsername);
     }
   }, []);
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
     // Clear authentication status and username from local storage on logout
-    localStorage.removeItem('username');
-    setIsLogin(false);
-    setUsername('');
-    navigate("/");
+    try {
+      await axios.get("http://localhost:3001/logout", {
+        withCredentials: true,
+      });
+      localStorage.removeItem("username");
+      setIsLogin(false);
+      setUsername("");
+      navigate("/");
+    } catch (error) {
+      console.error("Error fetching data:", error.message);
+    }
   };
   return (
     <div className={cx("wrapper")}>
@@ -43,7 +50,11 @@ function Header({ currentPage }) {
           {isLogin ? (
             <>
               <span>Hello, {username}</span>
-              <button className={cx("logout")} onClick={handleLogout}>
+              <button
+                style={{ cursor: "pointer" }}
+                className={cx("logout")}
+                onClick={handleLogout}
+              >
                 Đăng xuất
               </button>
             </>

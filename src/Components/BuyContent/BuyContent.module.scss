@@ -1,0 +1,25 @@
+.wrapper {
+  background-image: url("../images/background2.png");
+  background-size: contain;
+  width: 100%;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form-buycontent {
+  display: flex;
+}
+.title {
+  color: white;
+  text-shadow: 2px 2px #ff0000;
+  transform: skewY(5deg); /* Độ cong của chữ */
+  border-radius: 20px; /* Bán kính cong */
+}
+.inputBuy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
